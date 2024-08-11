@@ -1,0 +1,98 @@
+body{
+    font-family: "Poppins", sans-serif;
+    /*background-color: aqua;*/
+    max-width: 1280px; /* largura maxima da tela. */
+    margin: 0 auto; /* valor aplicado encima e baixo como zero e alto nas laterais, direito e esquerdo*/
+}
+.carrossel {
+    position: fixed; /*posição fixa*/
+    top: 0; /* posição da imagem para cima */
+    left: 0; /* posição da imagem na esquerda */
+    width: 100%;/*ocupa o espaço da tela, nesse caso usará 100% do espaço*/
+    z-index: -1; /* profundidade no eixo z, no elemento aplicado*/
+}
+.informacoes{
+    display: none; /*essa função esconde o valor da DIv - conteudo */
+}
+
+.informacoes.ativa{
+    display: block; /* essa função mostra o valor da div conteudo */
+}
+
+.conteudo{
+    display: flex;/*posicionar o elemento de forma mais facil*/
+    flex-direction: column; /*para deixar de forma coluna, o conteudo*/
+    justify-content: space-evenly;/*espeço de forma uniforme*/ 
+    min-height: 100vh;/* altura minima, de toda altura da tela, do espaço*/
+}
+.informacoes h1{ /*aplicando estilo, no valor h1 da DIV informacoes */
+    /*background-color: red; /* cor do fundo da fonte *//* */
+    font-size: 35px; /* tamanho da fonte*/
+    color: white; /* cor da fonte */
+    margin-bottom: 80px; /*espaço entre os conteudos */
+    font-family: "GOT";
+    letter-spacing: 10px; /* espaçamento entre as letras fonte*/
+}
+
+@font-face{ /*importar um fonte baixada externa  */
+    font-family: "GOT"; /*selecionar a familia */
+    src:url(../fontes/GOT.ttf); /* selecionando o arquivo na pasta ali baixada, ../> localizar a pasta / selecionar a pasta criada > fontes > selecioanr o arquivo > GOT > o ttf seria o estilo da extenssão */
+}
+.informacoes .descricao{
+    /*background-color: blue;*/
+    width: 49%;
+    font-size: 24px;
+    color: white;
+    line-height: 40px;
+    height: 300px; /* Criar masi texto, o mesmo não aumenta o espaço */
+    overflow: auto;/*criando uma barra de rolagem  */
+    padding-right: 15px; /* Combinadas, essas propriedades criam uma caixa com altura fixa (300px) que pode ter seu conteúdo rolado se for muito grande para caber na altura disponível. O padding-right de 15px garante que haja um espaço confortável à direita do conteúdo, mesmo se uma barra de rolagem estiver presente.*/
+}
+
+.botoes-carrossel{
+    /*background-color: brown;*/ /* Cor inserida, para ver o elemento sendo alterado */
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* espaçamento entre os elementos*/
+}
+.botoes-carrossel .botao{
+    background-color: white;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%; /* arredendar o elemento*/
+    border: 2px solid transparent; /*borda de 2px solida e transparente */
+    cursor: pointer; /* cursor na imagem ao passar por cima do botão */
+    border-color: white;
+}
+.botoes-carrossel .botao.selecionado{ /* classe com dois elementos que seria o botão selecioando */
+    background-color: green;
+}
+.imagem{
+    width: 100vw;/* ocupa 100% da tela altura */
+    height: 100vh; /* ocupa '100% da largura  */
+    object-fit: cover; /* faça caber o arquivo */
+    display: none;
+}
+.imagem.ativa{
+    display: block;
+    animation: mudarImagem 0.7s;
+}
+@keyframes mudarImagem{
+/* estilo de mudança de imagens, para mudar as imagens */
+from{
+    opacity: 0.85;
+}
+to{
+    opacity: 1;
+}
+}
+main::after{
+    content: "";
+    min-height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: linear-gradient(120deg, rgba(0, 0, 0, 1) 10%, rgba(0, 0, 0, 0.05926120448179273) 50%, rgba(0, 0, 0, 1) 90%);/* sombra aplicada na imagem */
+    z-index: -1; /* aprofunda a camada que é selecionda e aplicada*/
+}

@@ -1,0 +1,14 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /*facilita a moldagem entre as caixas ou div*/
+}
+ 
+/*O box-sizing: border-box é uma propriedade CSS que altera o modelo de caixa usado para calcular a largura e altura de um elemento. Quando você aplica box-sizing: border-box a um elemento, o padding e a border são incluídos dentro da largura e altura especificadas do elemento, em vez de serem adicionados a elas.
+
+Exemplo:
+Se você tem um div com a largura definida como 200px, e o padding de 10px, com box-sizing: content-box (o valor padrão), a largura total do elemento será 220px (200px de largura + 10px de padding à esquerda + 10px de padding à direita). No entanto, se você usar box-sizing: border-box, a largura total do elemento permanecerá 200px, e o conteúdo interno será ajustado para acomodar o padding e a border dentro dessa largura.
+
+Resumo:
+content-box (padrão): A largura e a altura especificadas se aplicam apenas ao conteúdo do elemento; padding e border são adicionados à largura e altura.
+border-box: A largura e altura especificadas incluem padding e border, mantendo o tamanho total do elemento fixo.*/
